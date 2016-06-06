@@ -52,7 +52,6 @@ module Devise
 
       # archive the last password before save and delete all to old passwords from archive
       def archive_password
-        byebug
         if self.encrypted_password_changed?
           if archive_count.to_i > 0
             self.old_passwords.create! old_password_params
