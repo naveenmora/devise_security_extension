@@ -4,7 +4,7 @@ module DeviseSecurityExtension
       include DeviseSecurityExtension::Controllers::Helpers
     end
     
-    ActionDispatch::Callbacks.to_prepare do
+    ActiveSupport::Reloader.to_prepare do
       DeviseSecurityExtension::Patches.apply
     end
 
